@@ -1,3 +1,4 @@
+export default 
 [{ 'id':1, 'first_name':'Rakel', 'last_name':'Stouther', 'email':'rstouther0@google.de', 'ip_address':'80.101.98.235' },
     { 'id':2, 'first_name':'June', 'last_name':'Spiby', 'email':'jspiby1@themeforest.net', 'ip_address':'87.150.28.110' },
     { 'id':3, 'first_name':'Fernanda', 'last_name':'McComiskie', 'email':'fmccomiskie2@yahoo.co.jp', 'ip_address':'34.74.27.103' },

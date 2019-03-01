@@ -1,19 +1,7 @@
 const test = QUnit.test;
-
+import { makeContactCard } from '../src/cards-component.js';
 QUnit.module('template build');
 
-function makeContactCard(contact) {
-    const html = /*html*/
-    `<li>
-            <h3>${contact.first_name} ${contact.last_name}</h3>
-            <p>Email: ${contact.email}</p>
-            <p>ID: ${contact.id}</p>
-        </li>`;
-    
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    return template.content;
-}
 test('make contact card template', assert => {
     //arrange
     const contact = {
