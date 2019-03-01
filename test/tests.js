@@ -1,3 +1,2 @@
 import './html-equal.js';
-
-// add first test file!
+import './make-card-template.test.js';
