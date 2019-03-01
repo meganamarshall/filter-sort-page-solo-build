@@ -14,3 +14,17 @@ header {
 h1 {
     margin-left: 20px;
 }
+
+#contact-list {
+    list-style-type: none;
+    padding: 0px;
+}
+
+#contact-list li {
+    height: 200px;
+    width: 200px;
+    border: 3px solid cornflowerblue;
+    display: inline-block;
+    margin: 10px;
+    padding: 8px;
+}
