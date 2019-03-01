@@ -2,6 +2,18 @@ const test = QUnit.test;
 
 QUnit.module('template build');
 
+function makeContactCard(card) {
+    const html = /*html*/
+    `<li>
+            <h3>Rakel Stouther</h3>
+            <p>Email: rstouther0@google.de</p>
+            <p>ID: 1</p>
+        </li>`;
+    
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content;
+}
 test('make contact card template', assert => {
     //arrange
     const contact = {
@@ -14,8 +26,8 @@ test('make contact card template', assert => {
             <p>ID: 1</p>
         </li>`;
     //act
-    const dom = makeContactCard(contact)
+    const dom = makeContactCard(contact);
     //assert
 
-    assert.deepEqual(dom, expected);
+    assert.htmlEqual(dom, expected);
 });
