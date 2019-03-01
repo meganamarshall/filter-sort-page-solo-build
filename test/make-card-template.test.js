@@ -2,12 +2,12 @@ const test = QUnit.test;
 
 QUnit.module('template build');
 
-function makeContactCard(card) {
+function makeContactCard(contact) {
     const html = /*html*/
     `<li>
-            <h3>Rakel Stouther</h3>
-            <p>Email: rstouther0@google.de</p>
-            <p>ID: 1</p>
+            <h3>${contact.first_name} ${contact.last_name}</h3>
+            <p>Email: ${contact.email}</p>
+            <p>ID: ${contact.id}</p>
         </li>`;
     
     const template = document.createElement('template');
