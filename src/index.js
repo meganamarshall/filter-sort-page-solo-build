@@ -4,17 +4,9 @@ import loadFilter from './filter-component.js';
 import { filterContacts } from './filter-component.js';
 import loadSort from './sort-component.js';
 import { sortContacts } from './sort-component.js';
-const json = localStorage.getItem('filtered');
 
 loadCards(contacts);
 
-loadFilter(filter => {
-    const filtered = filterContacts(contacts, filter);
-    loadCards(filtered);
-    const json = JSON.stringify(filtered);
-    localStorage.setItem(json, 'filtered');
-    console.log(filtered);
-});
 
 loadSort(sortChoice => {
     const json = localStorage.getItem('filtered');
@@ -29,3 +21,10 @@ loadSort(sortChoice => {
     }
 });
 
+loadFilter(filter => {
+    const filtered = filterContacts(contacts, filter);
+    loadCards(filtered);
+    const json = JSON.stringify(filtered);
+    localStorage.setItem(json, 'filtered');
+    console.log(filtered);
+});
