@@ -8,7 +8,17 @@ const contacts = [
     { first_name: 'erin', last_name: 'marshall', id: '3' }
 ];
 
-function sortByName
+function sortByName(contacts) {
+    return contacts.sort((a, b) => {
+        if(a.first_name === b.first_name) {
+            return 0;
+        }
+        if(a.first_name > b.first_name) {
+            return 1;
+        }
+        return -1;
+    });
+}
 test('sort by first name', assert => {
     //arrange
     const expected = [
