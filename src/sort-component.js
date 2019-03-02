@@ -13,11 +13,11 @@ export function sortContacts(contacts, sortChoice) {
     });
 }
 
-export default function loadSort() {
+export default function loadSort(callback) {
     sortSelect.addEventListener('change', () => {
         const sortChoice = {
             property: sortSelect.value
         };
-        console.log(sortChoice);
+        callback(sortChoice);
     });
 }
