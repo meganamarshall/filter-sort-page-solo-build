@@ -15,6 +15,9 @@ export function makeContactCard(contact) {
 const contactList = document.getElementById('contact-list');
 
 export default function loadCards(contacts) {
+    while(contactList.firstChild) {
+        contactList.firstChild.remove();
+    }
     contacts.forEach(contact => {
         const dom = makeContactCard(contact);
         contactList.appendChild(dom);
