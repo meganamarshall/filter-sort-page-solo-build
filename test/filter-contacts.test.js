@@ -4,7 +4,7 @@ QUnit.module('filtering logic');
 
 function filterContacts(contacts, filter) {
     return contacts.filter(contact => {
-        const nameMatches = contact.name === filter.name;
+        const nameMatches = !filter.name || contact.name === filter.name;
         return nameMatches;
     });
 }
@@ -21,4 +21,21 @@ test('filter by last name', assert => {
 
     //assert
     assert.deepEqual(filtered, [{ name: 'smith' }]);
+});
+
+test('no filter returns all contacts', assert => {
+    //arrange
+    const contacts = [
+        { name: 'marshall' },
+        { name: 'smith' },
+        { name: 'honeyball' }
+    ];
+    const filter = { name: '' };
+    //act
+    const filtered = filterContacts(contacts, filter);
+
+    //assert
+    assert.deepEqual(filtered, [{ name: 'marshall' },
+        { name: 'smith' },
+        { name: 'honeyball' }]);
 });
